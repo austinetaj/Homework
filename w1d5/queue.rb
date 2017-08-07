@@ -8,12 +8,12 @@ class Queue
   end
 
   def dequeue
-    queue_length = @array.length
-    @array.delete_at(0) if queue_length >= 1
-    puts "Can't delete from an empty queue" if queue_length < 1
+    # queue_length = @array.length
+    @array.shift# if queue_length >= 1
+    # puts "Can't delete from an empty queue" if queue_length < 1
   end
   def show
-    puts "#{@array}"
+    @array.dup
   end
 end
 
@@ -26,7 +26,7 @@ queue.enqueue(3)
 queue.show
 queue.enqueue(4)
 queue.show
-queue.enqueue(5)
+p queue.enqueue(5)
 queue.show
 queue.dequeue
 queue.show
@@ -34,7 +34,7 @@ queue.dequeue
 queue.show
 queue.enqueue(7)
 queue.show
-queue.enqueue(30)
+p queue.enqueue(30)
 queue.show
 queue.dequeue
 queue.show
@@ -43,8 +43,8 @@ queue.show
 queue.dequeue
 queue.show
 queue.dequeue
-queue.show
+p queue.show
 queue.dequeue
-queue.show
+p queue.show
 queue.dequeue
 queue.show

@@ -21,16 +21,16 @@ class Map
   end
 
   def remove(key)
-    index = lookup(key)
-    if index >= 0
-      @map.delete_at(index)
-    else
-      puts "No such key"
-    end
+     index = lookup(key)
+     @map.delete_at(index) if index >= 0
+
+    # else
+    #   puts "No such key"
+    # end
   end
 
   def show
-    puts "#{@map}"
+    @map.dup
   end
 end
 
@@ -45,16 +45,16 @@ map.show
 map.assign("d",4)
 map.show
 map.assign("a",11)
-map.show
+p map.show
 map.remove("a")
-map.show
+p map.show
 map.remove("1")
 map.show
 map.remove("c")
-map.show
+p map.show
 map.remove("d")
-map.show
+p map.show
 map.remove("b")
-map.show
+p map.show
 map.remove("d")
 map.show
